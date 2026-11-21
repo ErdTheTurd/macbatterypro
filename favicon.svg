@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img">
+  <title>Mac Battery Pro</title>
+  <style>
+    .m { stroke: #13553c; }
+    @media (prefers-color-scheme: dark) {
+      .m { stroke: #a5d8c0; }
+    }
+  </style>
+  <rect class="m" x="3" y="8" width="22" height="16" rx="3" fill="none" stroke-width="2.25"/>
+  <path class="m" d="M26.5 13h1.1a1.6 1.6 0 0 1 1.6 1.6v2.8a1.6 1.6 0 0 1-1.6 1.6H26.5" fill="none" stroke-width="2.25" stroke-linecap="round"/>
+</svg>
