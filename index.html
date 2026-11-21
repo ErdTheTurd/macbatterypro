@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#f3f0e8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#131210" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
   <title>Mac Battery Pro</title>
-  <meta name="description" content="Mac Battery Pro shows, in plain words, what is using your Mac’s battery, CPU, and memory, and what you can do about it. Coming soon to the Mac.">
+  <meta name="description" content="Mac Battery Pro shows what is using your Mac’s battery, processor, and memory in plain words, with one thing you can do. Coming soon to the Mac.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -16,68 +16,202 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="index.html">
-        <svg class="mark" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <rect x="1.75" y="6" width="17.5" height="12" rx="2.25" fill="none" stroke="currentColor" stroke-width="1.75"/>
-          <path d="M20.25 9.75h.7a1.3 1.3 0 0 1 1.3 1.3v1.9a1.3 1.3 0 0 1-1.3 1.3h-.7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+        <svg class="mark" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+          <rect x="2" y="6.5" width="17" height="11" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M20.2 10h.8a1.15 1.15 0 0 1 1.15 1.15v1.7A1.15 1.15 0 0 1 21 14h-.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          <rect x="4.3" y="8.8" width="7.2" height="6.4" rx="1" fill="currentColor"/>
         </svg>
         Mac Battery Pro
       </a>
-      <nav aria-label="On this page">
+      <nav aria-label="Pages">
         <ul class="nav-list">
-          <li><a href="#what">What it does</a></li>
-          <li><a href="#respect">How it respects you</a></li>
-          <li><a href="#access">Accessibility</a></li>
+          <li><a href="#preview">Preview</a></li>
+          <li><a href="#treats">How it treats your Mac</a></li>
           <li><a href="privacy.html">Privacy</a></li>
         </ul>
       </nav>
     </div>
   </header>
+
   <main id="main" tabindex="-1">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap">
+    <div class="wrap board">
+      <section class="intro" aria-labelledby="hero-title">
         <p class="soon">Coming soon to the Mac</p>
-        <h1 id="hero-title">Mac Battery Pro</h1>
-        <p class="lede">See what is using your Mac’s battery, CPU, and memory, in plain words, and what you can do about it.</p>
-      </div>
-    </section>
-    <section id="what" aria-labelledby="what-heading">
-      <div class="wrap">
-        <h2 id="what-heading">What it does</h2>
-        <p class="intro">A friendlier Activity Monitor. It shows what is draining your Mac, in plain words, and offers simple suggestions.</p>
-        <dl class="topics">
+        <h1 id="hero-title">What’s using the battery, in plain words.</h1>
+        <p class="lede">Each row is one app, one sentence about why it is busy, and one thing you can try.</p>
+      </section>
+
+      <article class="window window-battery" aria-label="Battery window, early design preview">
+        <div class="titlebar" aria-hidden="true">
+          <span class="lights"><i class="light-close"></i><i class="light-min"></i><i class="light-zoom"></i></span>
+          <p class="window-title">Mac Battery Pro</p>
+          <span></span>
+        </div>
+        <p class="toolbar">On battery power</p>
+        <div class="window-body">
+          <div class="sidebar">
+            <p class="side-label">Views</p>
+            <ul class="side-list">
+              <li aria-current="true">Battery</li>
+              <li>CPU &amp; Memory</li>
+            </ul>
+          </div>
+          <ul class="app-list">
+            <li class="app-row is-high">
+              <span class="glyph" aria-hidden="true">S</span>
+              <div>
+                <p class="app-name">Safari</p>
+                <p class="plain">Using a lot of energy because 14 tabs are open.</p>
+                <p class="suggest"><span>Suggestion</span> Close tabs you are not using.</p>
+              </div>
+            </li>
+            <li class="app-row">
+              <span class="glyph" aria-hidden="true">P</span>
+              <div>
+                <p class="app-name">Photos</p>
+                <p class="plain">Using some energy while it scans pictures in the background.</p>
+                <p class="suggest"><span>Suggestion</span> Let it finish, or quit Photos if you are done.</p>
+              </div>
+            </li>
+            <li class="app-row">
+              <span class="glyph" aria-hidden="true">M</span>
+              <div>
+                <p class="app-name">Mail</p>
+                <p class="plain">Using a little energy to check for new mail.</p>
+                <p class="suggest"><span>Suggestion</span> Nothing to change.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <figure class="more" id="preview">
+        <div class="more-grid">
+          <div class="menu-preview">
+            <div class="mini-bar" aria-hidden="true">
+              <span class="mini-side">Menu bar</span>
+              <span class="menu-battery">
+                <svg viewBox="0 0 24 14" width="20" height="12" focusable="false">
+                  <rect x="0.8" y="1.2" width="19" height="11.6" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+                  <path d="M21 4.6h.7a1.1 1.1 0 0 1 1.1 1.1v2.6a1.1 1.1 0 0 1-1.1 1.1H21" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                  <rect x="2.6" y="3.1" width="10.2" height="7.8" rx="1" fill="currentColor"/>
+                </svg>
+              </span>
+            </div>
+            <div class="popover" role="region" aria-label="Menu bar popover, early design preview">
+              <div class="pop-head">
+                <svg viewBox="0 0 24 14" width="22" height="13" aria-hidden="true" focusable="false">
+                  <rect x="0.8" y="1.2" width="19" height="11.6" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+                  <path d="M21 4.6h.7a1.1 1.1 0 0 1 1.1 1.1v2.6a1.1 1.1 0 0 1-1.1 1.1H21" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                  <rect x="2.6" y="3.1" width="10.2" height="7.8" rx="1" fill="currentColor"/>
+                </svg>
+                <p>On battery</p>
+              </div>
+              <p class="pop-lead">Safari is using the most energy.</p>
+              <p class="pop-detail">14 tabs are open.</p>
+              <p class="suggest"><span>Suggestion</span> Close tabs you are not using.</p>
+            </div>
+          </div>
+
+          <article class="window window-cpu" aria-label="CPU and memory window, early design preview">
+            <div class="titlebar" aria-hidden="true">
+              <span class="lights"><i class="light-close"></i><i class="light-min"></i><i class="light-zoom"></i></span>
+              <p class="window-title">Mac Battery Pro</p>
+              <span></span>
+            </div>
+            <p class="toolbar">Processor and memory</p>
+            <div class="window-body">
+              <div class="sidebar">
+                <p class="side-label">Views</p>
+                <ul class="side-list">
+                  <li>Battery</li>
+                  <li aria-current="true">CPU &amp; Memory</li>
+                </ul>
+              </div>
+              <div class="groups">
+                <section class="group" aria-label="Processor">
+                  <p class="group-title">Processor</p>
+                  <ul class="app-list">
+                    <li class="app-row is-high">
+                      <span class="glyph" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" width="14" height="14" focusable="false">
+                          <rect x="1" y="7" width="3" height="7" rx="0.6" fill="currentColor"/>
+                          <rect x="6.5" y="3" width="3" height="11" rx="0.6" fill="currentColor"/>
+                          <rect x="12" y="5" width="3" height="9" rx="0.6" fill="currentColor"/>
+                        </svg>
+                      </span>
+                      <div>
+                        <p class="app-name">Music</p>
+                        <p class="plain">Using 31% of the processor while it analyzes songs.</p>
+                        <p class="suggest"><span>Suggestion</span> Pause it if you are not listening.</p>
+                      </div>
+                    </li>
+                    <li class="app-row">
+                      <span class="glyph" aria-hidden="true">W</span>
+                      <div>
+                        <p class="app-name">WindowServer</p>
+                        <p class="plain">Using 12% of the processor. This is macOS drawing the screen.</p>
+                        <p class="suggest"><span>Suggestion</span> Nothing to quit.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </section>
+                <section class="group" aria-label="Memory">
+                  <p class="group-title">Memory</p>
+                  <ul class="app-list">
+                    <li class="app-row">
+                      <span class="glyph" aria-hidden="true">S</span>
+                      <div>
+                        <p class="app-name">Safari</p>
+                        <p class="plain">Using 1.8 GB of memory with those 14 tabs.</p>
+                        <p class="suggest"><span>Suggestion</span> Close tabs you are not reading.</p>
+                      </div>
+                    </li>
+                    <li class="app-row">
+                      <span class="glyph" aria-hidden="true">N</span>
+                      <div>
+                        <p class="app-name">Notes</p>
+                        <p class="plain">Using 240 MB of memory.</p>
+                        <p class="suggest"><span>Suggestion</span> Nothing to do.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </section>
+              </div>
+            </div>
+          </article>
+        </div>
+        <figcaption>Early design preview. The apps and numbers are examples, not a reading from a Mac.</figcaption>
+      </figure>
+
+      <section class="behaviors" id="treats" aria-labelledby="treats-title">
+        <h2 id="treats-title">How it treats your Mac</h2>
+        <dl class="settings">
           <div>
-            <dt>Battery</dt>
-            <dd>See what is using the battery. It says so in plain words, and suggests what you can do.</dd>
+            <dt>Works offline</dt>
+            <dd>It does not need an internet connection.</dd>
           </div>
           <div>
-            <dt>CPU</dt>
-            <dd>See what is using the processor, in the same plain language, with a simple suggestion.</dd>
+            <dt>Read-only by default</dt>
+            <dd>It does not change your Mac on its own.</dd>
           </div>
           <div>
-            <dt>Memory</dt>
-            <dd>See what is using memory, explained clearly, with a simple suggestion for what to do.</dd>
+            <dt>Asks first</dt>
+            <dd>It never quits or closes an app without your confirmation.</dd>
+          </div>
+          <div>
+            <dt>No account</dt>
+            <dd>You do not sign in.</dd>
+          </div>
+          <div>
+            <dt>VoiceOver and large text</dt>
+            <dd>Built so you can listen to it, and read it at a large size.</dd>
           </div>
         </dl>
-      </div>
-    </section>
-    <section id="respect" aria-labelledby="respect-heading">
-      <div class="wrap">
-        <h2 id="respect-heading">How it respects you</h2>
-        <ul class="promises">
-          <li>It works offline.</li>
-          <li>It is read-only by default.</li>
-          <li>It never quits or closes an app without your confirmation.</li>
-          <li>No account is needed.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="access" aria-labelledby="access-heading">
-      <div class="wrap">
-        <h2 id="access-heading">Accessibility</h2>
-        <p class="intro">Mac Battery Pro is built for VoiceOver, so you can listen to it. It is built for large text, so you can read it at a size that suits you.</p>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
+
   <footer class="site-footer">
     <div class="wrap footer-inner">
       <p>© Mac Battery Pro</p>
